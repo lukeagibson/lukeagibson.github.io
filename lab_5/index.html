@@ -288,7 +288,7 @@
       let data = JSON.parse(countries_json);
       let x;
       for (x = 0; x < 50; x+=1) {
-        let y = Math.round(Math.random() * countries.length;
+        let y = Math.round(Math.random() * countries.length);
         console.log(data[y]);
         if (data[y].name == undefined) {
           x-=1;
