@@ -281,10 +281,12 @@
     console.log("List of countries in the world", countries);
     
     function randomcountries() {
+      let countries_json = JSON.stringify(countries)
+      let data = JSON.parse(countries_json)
       for (x = 0, x < 50, x++) {
-	      let countries2 = countries;
-        let y = Math.random() * range(countries2);
-        document.getElementsByClassName('button')[0].innerHTML += countries2[y].name;
+	      
+        let y = round(Math.random() * length(countries));
+        document.getElementsByClassName('button')[0].innerHTML += data[y].name;
         delete countries2[y];
       }
     }
