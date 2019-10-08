@@ -281,7 +281,7 @@
     console.log("List of countries in the world", countries);
     
     function randomcountries() {
-      for (x in range(50)) {
+      for (x = 0, x < 50, x++) {
         const countries2 = countries
         const y = Math.random() * range(countries2)
         document.getElementsByClassName('button')[0].innerHTML += countries2[y].name
