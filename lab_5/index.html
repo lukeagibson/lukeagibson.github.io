@@ -282,10 +282,10 @@
     
     function randomcountries() {
       for (x = 0, x < 50, x++) {
-        const countries2 = countries
-        const y = Math.random() * range(countries2)
-        document.getElementsByClassName('button')[0].innerHTML += countries2[y].name
-        delete countries2[y]
+	      let countries2 = countries;
+        let y = Math.random() * range(countries2);
+        document.getElementsByClassName('button')[0].innerHTML += countries2[y].name;
+        delete countries2[y];
       }
     }
   </script>
