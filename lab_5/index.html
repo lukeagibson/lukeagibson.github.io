@@ -11,7 +11,7 @@
     <div class="wrapper">
       <div class="header">Test JSON page</div>
       <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
-      <button class="button" onclick="console.log('You haven\'t written a function yet!');">Click me to replace list entries</button>
+      <button class="button" onclick="randomcountries();">Click me to replace list entries</button>
       <div class="content">
         <ul class="instructions">
           <li>Delete and re-clone the class repository</li>
@@ -279,6 +279,15 @@
       { "name": "Zimbabwe", "code": "ZW" }
     ]
     console.log("List of countries in the world", countries);
+    
+    function randomcountries() {
+      for (x in range(50)) {
+        const countries2 = countries
+        const y = Math.random() * range(countries2)
+        document.getElementsByClassName('button')[0].innerHTML += countries2[y].name
+        delete countries2[y]
+      }
+    }
   </script>
 </body>
 
