@@ -13,7 +13,7 @@
       <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
       <button class="button" onclick="randomcountries();">Click me to replace list entries</button>
       <div class="content">
-        <ul class="instructions">
+        <ul class="instructions" onload="randomcountries();">
           <li>Delete and re-clone the class repository</li>
           <li>Open <span class="code">lab_5_json.html</span> in your browser</li>
           <li>Open your developer tools and look at the logged data</li>
@@ -280,24 +280,27 @@
     ]
     console.log("List of countries in the world", countries);
     
-    
-  </script>
-  <script>
-  function randomcountries() {
+    function randomcountries() {
       let countries_json = JSON.stringify(countries);
       let data = JSON.parse(countries_json);
       let x;
+      let country_list = "";
       for (x = 0; x < 50; x+=1) {
         let y = Math.round(Math.random() * countries.length);
         console.log(data[y]);
-        if (data[y].name == undefined) {
+        if (data[y] === undefined) {
           x-=1;
           continue;
         }
-        document.getElementsByClassName("instructions")[0].innerHTML += data[y].name;
+        country_list += "<li>"+data[y].name+"</li>"
         delete data[y];
       }
+      document.getElementsByClassName("instructions")[0].innerHTML = data[y].name;
     }
+    
+  </script>
+  <script>
+  
   </script>
 </body>
 
