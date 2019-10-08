@@ -284,13 +284,17 @@
   </script>
   <script>
   function randomcountries() {
-      let countries_json = JSON.stringify(countries)
-      let data = JSON.parse(countries_json)
-      for (x = 0, x < 50, x++) {
-	      
-        let y = round(Math.random() * length(countries));
-        document.getElementsByClassName('button')[0].innerHTML += data[y].name;
-        delete countries2[y];
+      let countries_json = JSON.stringify(countries);
+      let data = JSON.parse(countries_json);
+      let x;
+      for (x = 0; x < 50; x+=1) {
+        let y = Math.round(Math.random() * countries.length());
+        if data[y].name == undefined {
+          x-=1;
+          continue;
+        }
+        document.getElementsByClassName("instructions")[0].innerHTML += data[y].name;
+        delete data[y];
       }
     }
   </script>
