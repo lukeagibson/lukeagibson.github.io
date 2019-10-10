@@ -14,7 +14,7 @@
           Click me to replace list entries
         </button>
         <div class="content">
-          <ul class="instructions"></ul>
+          <ol class="instructions"></ol>
         </div>
         <div class="footer"></div>
       </div>
@@ -270,7 +270,7 @@
       sessionStorage.setItem('countries_arr', JSON.stringify(countries))
 
       function randomcountries() {
-        let countries_json = sessionStorage.getItem('countries_arr')
+        let countries_json = sessionStorage.getItem();
         let data = JSON.parse(countries_json);
         let x;
         let country_list = "";
