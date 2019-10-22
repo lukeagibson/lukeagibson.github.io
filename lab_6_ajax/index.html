@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Test AJAX page</title>
+  <link rel="stylesheet" type="text/css" href="./lab_styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="header">Test AJAX page</div>
+      <button class="button" onclick="loadData()">Load Some JSON</button>
+      <div class="content"></div>
+      <div class="footer"></div>
+    </div>
+  </div>
+  <script>
+    function loadData() {
+      fetch('ajax_sample.json')
+        .then(res => res.json())
+        .then(res => res.map(c => c.code))
+        .then(codesall => randomcodes(codesall))
+        .then(codes => document.querySelector(".content").innerText = codes);
+    }
+
+    function randomcodes(codesvar) {
+        let x;
+        let country_list = "";
+        for (x = 0; x < 15; x += 1) {
+          let y = Math.round(Math.random() * codesvar.length);
+          console.log(codesvar[y]);
+          if (codesvar[y] === undefined) {
+            x -= 1;
+            continue;
+          }
+          country_list += codesvar[y] + " ";
+          delete codesvar[y];
+        }
+        return country_list;
+      }
+  </script>
+</body>
+
+</html>
