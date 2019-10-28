@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Test AJAX page</title>
+  <link rel="stylesheet" type="text/css" href="./lab_styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="header">UMD Bus Routes</div>
+      <button class="button" onclick="loadData()">Load Some JSON</button>
+      <ul class="content">
+      
+      </ul>
+      <div class="footer"></div>
+    </div>
+  </div>
+  <script>
+    function loadData() {
+      fetch('https://api.umd.io/v0/bus/routes')
+        .then(res => res.json())
+        .then(res => {console.log(res);
+           return res})
+        .then(data => {document.querySelector(".content").innerHTML = data.map(concatnames).join("");
+           console.log(data.map(concatnames));
+           return data})
+        .then(data => {document.querySelector(".header").innerText += " " + data.find(is104).title;
+           return data})
+        .then(data => console.log(data))
+    }
+
+    function concatnames(item) {
+      return "<li>" + item.title + "</li>"
+          }
+    function is104(item) {
+      return item.title === "104 College Park Metro"
+    }
+  </script>
+</body>
+
+</html>
