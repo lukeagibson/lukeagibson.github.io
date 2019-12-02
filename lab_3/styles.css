@@ -1,0 +1,54 @@
+<style>
+body {
+    background-color: ghostwhite;
+}
+
+/* this is a comment */
+/* this is a link to an external stylesheet <link rel="stylesheet" type="text/css" href="mystyle.css"> */
+
+
+
+.header {
+    text-align: center;
+    background-color: #00203FFF;
+    color: #ADEFD1FF;
+    text-shadow: 5px black;
+}
+
+.body {
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex
+}
+
+.portrait {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 20px solid #00203FFF;
+}
+
+p {
+    font-size: 18px;
+}
+h2 {
+    padding-top: 15px;
+    border-top: 6px solid #00203FFF;
+}
+
+ul {
+    list-style-type: circle;
+    border-bottom: 6px #00203FFF;
+}
+ul li {
+    background: whitesmoke;
+    line-height: 1.5;
+    
+    
+}
+
+
+</style>

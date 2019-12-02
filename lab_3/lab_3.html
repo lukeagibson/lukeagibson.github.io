@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample HTML Demonstration Page</title>
+    <style>
+      body, head {
+        margin: 0;
+      }
+
+      .first {
+        background: red;
+        width: 100px;
+        height: 42px;
+      }
+
+      .newsline {
+        font-size: 28px;
+        font-weight: 900;
+      }
+
+      .wrapper {
+        width: 60%;
+        background: grey;
+        height: 100vh;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 25px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .second_container {
+        background: pink;
+        text-align: center;
+        padding: 70px;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0;
+      }
+
+      .textbox {
+        height: 100px;
+        width: 350px;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .second {
+        background: lightblue;
+      }
+
+      .anchor {
+        color: purple;
+        text-decoration: underline;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="head" id="start">
+        <div class="newsline">Sample Header</div>
+        <div class="anchor">anchor tag to nowhere</div>
+      </div>
+      <div class="second_container">
+        <div class="interior">
+          hello
+        </div>
+      </div>
+      <div class="container">
+        <div class="first textbox">
+          click me I'm great
+        </div>
+        <div class="first textbox"></div>
+        <div class="second textbox">
+          <p>
+            World #2
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
